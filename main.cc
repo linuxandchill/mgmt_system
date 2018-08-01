@@ -25,6 +25,22 @@ void readFile(std::vector<Employee>& employee_list){
     record_number++ ; 
     std::cout << record_number << " - " 
       << line << std::endl; 
+
+    std::istringstream iss(line);
+
+    std::string strEmpID;
+    std::string strName;
+    std::string strSalary;
+    std::string strPF; 
+    std::string strInsurance;
+    std::string strEmail; 
+
+    std::getline(iss, strEmpID, ',');  
+    std::getline(iss, strName, ',');  
+    std::getline(iss, strSalary, ',');  
+    std::getline(iss, strPF, ',');  
+    std::getline(iss, strInsurance, ',');  
+    std::getline(iss, strEmail, ',');  
   }
 }
 
