@@ -41,6 +41,16 @@ void readFile(std::vector<Employee>& employee_list){
     std::getline(iss, strPF, ',');  
     std::getline(iss, strInsurance, ',');  
     std::getline(iss, strEmail, ',');  
+
+    //convert from string to respective field types
+    Employee temp;
+    temp.ID = atoi(strEmpID.c_str()); // to legacy C-type string then to int
+    temp.name = strName;
+    temp.salary = atof(strSalary.c_str()) // to legacy C-type string then to double
+    temp.pf = atof(strPF.c_str()) // to legacy C-type string then to double
+    temp.insurance = atof(strInsurance.c_str())
+    temp.email = strEmail
+
   }
 }
 
