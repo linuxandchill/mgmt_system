@@ -4,6 +4,7 @@
 #include <sstream> 
 #include <cstdlib> 
 #include "Employee.h"
+#include "utils.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ void readFile(std::vector<Employee>& employee_list){
   }
 
   std::string line;
-  int record_number {-1}; 
+  int record_number {0}; 
   while (!fin.eof()){
     std::getline(fin, line); 
 
@@ -46,12 +47,19 @@ void readFile(std::vector<Employee>& employee_list){
     Employee temp;
     temp.ID = atoi(strEmpID.c_str()); // to legacy C-type string then to int
     temp.name = strName;
-    temp.salary = atof(strSalary.c_str()) // to legacy C-type string then to double
-    temp.pf = atof(strPF.c_str()) // to legacy C-type string then to double
-    temp.insurance = atof(strInsurance.c_str())
-    temp.email = strEmail
+    temp.salary = atof(strSalary.c_str()); // to legacy C-type string then to double
+    temp.pf = atof(strPF.c_str()); // to legacy C-type string then to double
+    temp.insurance = atof(strInsurance.c_str());
+    temp.email = strEmail; 
+
+
+    // add to employee_list vector that was
+    // passed into function as parameter
+    employee_list.push_back(temp);  
 
   }
+
+  fin.close(); 
 }
 
 
@@ -60,8 +68,14 @@ int main(){
   std::vector<Employee> employee_list; 
 
   readFile(employee_list); 
+  std::cout << "Number of records: " << employee_list.size() << std::endl; 
 
-  //Employee John {12}; 
-  //std::cout << John.ID <<std::endl;
+  printMenu(); 
+
+  bool quit = false; 
+
+  while (!quit){
+
+  }
   return 0;
 }
