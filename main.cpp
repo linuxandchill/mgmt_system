@@ -75,8 +75,8 @@ int main(){
   bool quit = false; 
 
   while (!quit){
-    std::cout << "What would you like to do?: "
-    int option;
+    std::cout << "What would you like to do?: ";
+    int option {};
     std::cin >> option;
     if(option == 6){
       quit = true; 
