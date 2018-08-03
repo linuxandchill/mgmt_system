@@ -24,8 +24,8 @@ void readFile(std::vector<Employee>& employee_list){
     std::getline(fin, line); 
 
     record_number++ ; 
-    std::cout << record_number << " - " 
-      << line << std::endl; 
+    //std::cout << record_number << " - " 
+    //  << line << std::endl; 
 
     std::istringstream iss(line);
 
@@ -73,17 +73,18 @@ int main(){
   printMenu(); 
 
   bool quit = false; 
-
   while (!quit){
     std::cout << "What would you like to do?: ";
-    int option {};
+    int option;
     std::cin >> option;
+
     if(option == 6){
+      std::cout << "Exiting. Goodbye." << std::endl;
       quit = true; 
     }else{
       runTask(employee_list, option); 
     }
-
   }
+
   return 0;
 }
